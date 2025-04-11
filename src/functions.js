@@ -33,9 +33,11 @@ async function updateRepo() {
     try {
         const dir = path.join(process.cwd(), "data");
         const repo = `https://${config.git.token}@${config.git.repo}`;
+        console.log(repo)
         if (!fs.existsSync(dir)) {
             Logger.info("Cloning repository...");
             execSync(`git clone ${repo} data -b ${config.git.branch} --single-branch`, { stdio: 'ignore' });
+            execSync(`git -C ${dir} submodule update --init --recursive`, { stdio: 'ignore' });
         } else {
             Logger.info("Updating repository...");
             execSync(`git -C ${dir} pull --force origin ${config.git.branch}`, { stdio: 'ignore' });
