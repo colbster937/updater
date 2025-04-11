@@ -33,7 +33,6 @@ async function updateRepo() {
     try {
         const dir = path.join(process.cwd(), "data");
         const repo = `https://${config.git.token}@${config.git.repo}`;
-        console.log(repo)
         if (!fs.existsSync(dir)) {
             Logger.info("Cloning repository...");
             execSync(`git clone ${repo} data -b ${config.git.branch} --single-branch`, { stdio: 'ignore' });
