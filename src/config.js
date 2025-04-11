@@ -9,7 +9,7 @@ const defaultConfig = {
         branch: 'main',
         secret: 'abcdef123456!@#$%^&*()',
         token: 'abcdefghijklmnopqrstuvwxyz',
-        repo: 'https://github.com/example/example.git'
+        repo: 'github.com/example/example.git'
     }
 }
 

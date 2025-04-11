@@ -32,9 +32,10 @@ function validateData(data, req) {
 async function updateRepo() {
     try {
         const dir = path.join(process.cwd(), "data");
+        const repo = `https://${config.git.token}@${config.git.git}/${config.git.repo}`;
         if (!fs.existsSync(dir)) {
             Logger.info("Cloning repository...");
-            execSync(`git clone ${config.git.repo} data -b ${config.git.branch} --single-branch`, { stdio: 'ignore' });
+            execSync(`git clone ${repo} data -b ${config.git.branch} --single-branch`, { stdio: 'ignore' });
         } else {
             Logger.info("Updating repository...");
             execSync(`git -C ${dir} pull --force origin ${config.git.branch}`, { stdio: 'ignore' });
