@@ -1,0 +1,19 @@
+{
+  "name": "updater",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "express": "^5.1.0"
+  }
+}
